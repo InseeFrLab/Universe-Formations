@@ -3,7 +3,11 @@
   "cpus": {{service.cpus}},
   "mem": {{service.mem}},
   "instances": 1,
-  "cmd":"R -e \"funcampR::launch_learn(port=3838,host='0.0.0.0',file=funcampR:::tous_les_programmes('{{grimoire.chapitre}}.Rmd', '{{grimoire.quete}}'))\"",
+  "env": {
+    "USER": "icarius",
+    "PASSWORD": "statia",
+    "DISABLE_AUTH": "false" 
+  },
   "container": {
        "type": "DOCKER",
        "docker": {
@@ -11,7 +15,7 @@
            "forcePullImage": true,
            "network": "BRIDGE",
            "portMappings": [
-              { "containerPort": 3838, "hostPort": 0 }
+              { "containerPort": 8787, "hostPort": 0 }
           ]
        }
    },
