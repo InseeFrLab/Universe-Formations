@@ -7,7 +7,7 @@
   "assets": {
     "container": {
       "docker": {
-        "image": "git-registry.lab.sspcloud.fr/funcamp-r/funcamp-r-neverending"
+        "image": "inseefrlab/funcamp-r-neverending"
       }
     }
   }
