@@ -9,7 +9,7 @@ BUNDLE_REPORT_FOLDER="bundle-report"
 MAIN_BRANCH="master"
 PREVIEW_BRANCH="preview"
 UPSTREAM="https://$ACCESS_TOKEN@github.com/$GITHUB_REPOSITORY.git"
-AUTHOR="$GITHUB_ACTOR <>"
+AUTHOR="inseefrlab-bot <>"
 UNIVERSE_JSON="universe.json"
 MESSAGE="Republishing universe"
 
