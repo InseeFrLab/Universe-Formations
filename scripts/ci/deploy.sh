@@ -8,29 +8,10 @@ BUNDLE_REPORT_FOLDER="bundle-report"
 
 MAIN_BRANCH="master"
 PREVIEW_BRANCH="preview"
-UPSTREAM="https://$GITHUB_TOKEN@github.com/$TRAVIS_REPO_SLUG.git"
-AUTHOR="$USER <>"
-
-if [ "$TRAVIS_PULL_REQUEST" != "false" ];then
-  echo "Not republishing : on pull request"
-  exit 0
-fi
-
-if [ "$TRAVIS_BRANCH" != "$MAIN_BRANCH" && "$TRAVIS_BRANCH" != "$PREVIEW_BRANCH" ];then
-  echo "Not republishing : not on branch $MAIN_BRANCH or on $PREVIEW_BRANCH"
-  exit 0
-fi
-
-if [ "$TRAVIS_BRANCH" == "$MAIN_BRANCH" ]; then
-  MESSAGE="Republishing universe for revision $TRAVIS_COMMIT: $TRAVIS_COMMIT_MESSAGE"
-  UNIVERSE_JSON="universe.json"
-fi
-
-if [ "$TRAVIS_BRANCH" == "$PREVIEW_BRANCH" ]; then
-  MESSAGE="Republishing test universe for revision $TRAVIS_COMMIT: $TRAVIS_COMMIT_MESSAGE"
-  UNIVERSE_JSON="universe-preview.json"
-fi
-
+UPSTREAM="https://$ACCESS_TOKEN@github.com/$GITHUB_REPOSITORY.git"
+AUTHOR="$GITHUB_ACTOR <>"
+UNIVERSE_JSON="universe.json"
+MESSAGE="Republishing universe"
 
 function setup() {
     ls target
