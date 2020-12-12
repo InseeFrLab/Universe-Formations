@@ -7,7 +7,7 @@
   "assets": {
     "container": {
       "docker": {
-        "image": "inseefrlab/funcamp-r-neverending"
+        "image": "inseefrlab/funcamp-r-neverending:master"
       }
     }
   }
